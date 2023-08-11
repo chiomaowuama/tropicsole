@@ -12,7 +12,7 @@ function toggle() {
 
 </script>
 <template>
-   <header class="sticky top-0 bg-firstred shadow-lg">
+   <header class="sticky top-0 bg-firstred shadow-lg ">
     <!-- navbar -->
     <nav class="relative flex-nowrap sm:flex-wrap mx-auto p-2">
         <div class="flex items-center justify-between  text-white ">
@@ -37,7 +37,7 @@ function toggle() {
             </svg>
             </div>
             <div class="hidden md:flex space-x-6 lg:space-x-6 lg:pr-4">
-            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> New Arrivals</p>
+            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer">Men</p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Women</p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>

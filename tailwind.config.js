@@ -13,22 +13,32 @@ module.exports = {
         "whitebgs": "#DCF7FB66",
         "shoesbg": "#CA021C",
         "colorings": "#FFFFFF",
-      }
+      },
+      keyframes: {
+        slide: {
+          '0% , 100%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
+     
+    },
+    animation: {
+      // 'slide': 'slide 5s ease-in-out infinite ',
+      'animation-play-state':'paused',
     },
     fontFamily: {
       inter:["inter"],
     },
     container: {
       padding:"1rem",
-      
-      
     },
-    screens: {
+    screens: { 
       sm:"640px",
       md:"768px",
       lg:"976px",
       xl:"1440px",
     }
+    
   },
   plugins: [],
 }

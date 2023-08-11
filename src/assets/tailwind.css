@@ -12,3 +12,29 @@
 .open{
     display:none;
 }
+/* .logos{
+    display:flex;
+    gap:1rem;
+    box-sizing: border-box;
+    overflow:hidden;
+    white-space: nowrap;
+    padding:none; 
+}
+.logos:hover .logos-slide{
+    animation-play-state:paused;
+}
+
+.logos-slide{
+    animation:5s slide infinite linear;
+    border:2px solid yellow;
+}
+@keyframes slide{
+    from{
+        transform:translateX(-100)
+
+    }
+    to{
+        transform: translateX(-100%);
+
+    }
+} */
