@@ -7,17 +7,17 @@ import footerpage from '../components/footerpage.vue'
     <navigations/>
     <div>
         <!-- bigpicture -->
-        <div class="  flex border-2 border-green-900 overflow-x-hidden  ">
-            <img src="@/assets/largeshoe.png" alt="" class="animate-slide ">
-            <img src="@/assets/largeshoe.png" alt="" class="animate-slide" >
-            <img src="@/assets/largeshoe.png" alt=""  class="animate-slide">
+        <div class="  flex overflow-x-hidden  ">
+            <img src="@/assets/lotsofshoes.png" alt="" class="animate-slide ">
+            <img src="@/assets/lotsofshoes.png" alt="" class="animate-slide" >
+            <img src="@/assets/lotsofshoes.png" alt=""  class="animate-slide">
        
         </div>
         <!-- the body -->
         <div>
             <div></div>
             <div>
-                
+
             </div>
         </div>
        
