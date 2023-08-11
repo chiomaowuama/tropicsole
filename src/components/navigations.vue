@@ -38,7 +38,7 @@ function toggle() {
             </div>
             <div class="hidden md:flex space-x-6 lg:space-x-6 lg:pr-4">
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
-            <p class="text-lg hover:text-verydarkred hover:cursor-pointer">Men</p>
+            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Men</RouterLink></p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Women</p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>
             <input type="text" class="px-1 text-black outline-none hidden md:inline">
