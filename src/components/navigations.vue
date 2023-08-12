@@ -60,8 +60,8 @@ function toggle() {
         <!-- mobile menu -->
         <div class="md:hidden">
             <div id="menu" class="absolute flex flex-col items-center self-end  py-8 mt-10 space-y-6 font-bold bg-firstred text-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" :class="{'open':activeClass}">
-                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> New Arrivals</p>
-                <p class="text-lg hover:text-verydarkred hover:cursor-pointer">Men</p>
+                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
+                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Men</RouterLink></p>
                 <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Women</p>
                 <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>
                 <input type="text" class="px-1 text-black outline-none w-48">
