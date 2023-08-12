@@ -39,7 +39,7 @@ function toggle() {
             <div class="hidden md:flex space-x-6 lg:space-x-6 lg:pr-4">
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Men</RouterLink></p>
-            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Women</p>
+            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> WomeN</p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>
             <input type="text" class="px-1 text-black outline-none hidden md:inline">
             <svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
