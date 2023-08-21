@@ -66,11 +66,11 @@ onMounted(() => {
         <!-- the body -->
         <div class="flex">
             <!-- the side bar -->
-            <div class="  bg-sidenav w-2/6 md:w-1/5 rounded-r-3xl text-white pl-4  space-y-4 pb-4 min-h-max md:min-h-max"  >
+            <div class="  bg-sidenav w-24 md:w-1/5 rounded-r-3xl text-white pl-4  space-y-4 pb-4 min-h-max md:min-h-max"  >
                 <h3 class="text-base font-bold fontfamily-inter  pt-6">Filter</h3>
                 <div class="space-y-2 text-xs md:text-base">
                     <p>Brand</p>
-                    <input type="text"  class="w-24 md:w-32 lg:w-44 ">
+                    <input type="text"  class="w-16 md:w-32 lg:w-44 ">
                     <div class="space-x-1 ">
                         <input type="checkbox" name="checkbox" id="">
                         <label for="checkbox">Goldstar</label>
@@ -89,12 +89,12 @@ onMounted(() => {
                     </div>
                   
                 </div>
-                <div class=" flex w-26  text-xs md:text-sm md:w-32 lg:w-44  ">
+                <div class=" flex w-20  text-xs md:text-sm md:w-32 lg:w-44  ">
                     <div class="rounded-full bg-line w-4 h-4"></div>
                     <div class="w-3/5 bg-redishbtn  h-2 self-center md:w-full"></div>
                     <div class="rounded-full  bg-line w-4 h-4 self-center"></div>
                 </div>
-                <div class=" flex flex-col w-24 text-xs md:text-sm md:w-32 lg:w-44">
+                <div class=" flex flex-col w-16 text-xs md:text-sm md:w-32 lg:w-44">
                     
                     <div class="flex  justify-between ">
                         <p class=" ">0</p>
@@ -108,7 +108,7 @@ onMounted(() => {
                 </div>
                 <div class="space-y-2 text-xs md:text-base">
                     <p>Color</p>
-                    <input type="text" placeholder="Search Color" class="w-24 md:w-32 lg:w-44">
+                    <input type="text" placeholder="Search Color" class="w-16 md:w-32 lg:w-44">
                     <div class="space-x-1">
                         <input type="checkbox" name="checkbox" id="">
                         <label for="checkbox">Red</label>
@@ -119,7 +119,7 @@ onMounted(() => {
                     </div>
                     <div class="space-x-1">
                         <input type="checkbox" name="checkbox" id="">
-                        <label for="checkbox">White/orange</label>
+                        <label for="checkbox" >White</label>
                     </div>
                     <div class="space-x-1">
                         <input type="checkbox" name="checkbox" id="">
@@ -129,7 +129,7 @@ onMounted(() => {
                 </div>
                 <div class="space-y-2 text-xs md:text-base ">
                     <p>Size</p>
-                    <input type="text" placeholder="Search Size" class="w-24 md:w-32 lg:w-44">
+                    <input type="text" placeholder="Search Size" class="w-16 md:w-32 lg:w-44">
                     <div class="space-x-1">
                         <input type="checkbox" name="checkbox" id="">
                         <label for="checkbox">32</label>
@@ -154,13 +154,13 @@ onMounted(() => {
                 </div>
 
             </div>
-            <div class=" w-4/6 md:w-4/5 ">
+            <div class=" w-5/6 md:w-4/5 ">
                   <!-- recent shoes reviewed -->
-         <div class="grid grid-cols-2  md:grid-cols-3 gap-1 gap-y-10 md:gap-y-20  lg:gap-y-20  text-sm min-h-max md:min-h-max md:text-base" >
+         <div class="grid grid-cols-2  md:grid-cols-3 gap-1 gap-y-10 md:gap-y-20  lg:gap-y-20  text-sm min-h-max md:min-h-max md:text-base border-2 border-green-900" >
             <div class="px-0  md:px-4"  v-for="(product, id) in products" :key="id">
                 <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 h-66 gap-y-3 md:leading-8  md:w-10/12 ">
-                    <div class="w-full h-36 md:h-48">
-                        <img :src="product.image" class="  w-full h-36 mx-auto  md:w-64 md:h-48  " alt="">
+                    <div class="w-full h-36 md:h-60">
+                        <img :src="product.image" class="  w-full h-36 mx-auto  md:w-64 md:h-60  " alt="">
                     </div>
 
                     <p class=" truncate heighht ">{{ product.tittle }}</p>
@@ -168,70 +168,7 @@ onMounted(() => {
                     <button  class="px-2 rounded-2xl py-1 w-8/12  mx-auto bg-redishbtn -mb-4 md:w-8/12 " @click="() => TogglePopup('buttonTrigger', product.id)">View</button>
                 </div>
             </div>
-            <!-- <div class="px-0  md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
-                    <img src="@/assets/shoe2.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
-                </div>
-            </div>
-            <div class="px-0  md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8 md:w-full  ">
-                    <img src="@/assets/shoe8.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
-                </div>
-            </div>
-            <div class="px-0  md:px-4 hidden md:block">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8 md:w-full ">
-                    <img src="@/assets/shoe4.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
-                </div>
-            </div>
-            <div class="px-0 md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
-                    <img src="@/assets/shoe9.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
-                </div>
-            </div>
-            <div class="px-0  md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8 md:w-full ">
-                    <img src="@/assets/shoe6.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
-                </div>
-            </div>
-            <div class="px-0 md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
-                    <img src="@/assets/shoe7.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
-                </div>
-            </div>
-            <div class="px-0  md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8 md:w-full ">
-                    <img src="@/assets/brownshoe.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
-                </div>
-            </div>
-            <div class="px-0 md:px-4">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
-                    <img src="@/assets/shoe9.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
-                    <p class="text-center ">lorem lorem</p>
-                    <p  class="text-center ">Rs.1050</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
-                </div>
-            </div> -->
+          
             </div>
             </div>
         </div>
