@@ -12,29 +12,28 @@
 .open{
     display:none;
 }
-/* .logos{
-    display:flex;
-    gap:1rem;
-    box-sizing: border-box;
-    overflow:hidden;
-    white-space: nowrap;
-    padding:none; 
+/* the slide */
+.checkbtn{
+    display:block;
+    border:2px solid green;
+    
+ 
 }
-.logos:hover .logos-slide{
-    animation-play-state:paused;
+.checkbtn{
+border:2px solid green;
+margin-top:7px;
+width:40px;
+display:grid;
+grid-template-columns: 1fr;
+
+}  
+
+#check:checked ~ sides{
+    left:0;
 }
-
-.logos-slide{
-    animation:5s slide infinite linear;
-    border:2px solid yellow;
+.search{
+    display:none;
 }
-@keyframes slide{
-    from{
-        transform:translateX(-100)
-
-    }
-    to{
-        transform: translateX(-100%);
-
-    }
-} */
+.search svg{
+    display:none
+}

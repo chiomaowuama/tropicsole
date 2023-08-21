@@ -144,7 +144,7 @@ import footerpage from '../components/footerpage.vue'
                 </div>
             
                 <p class="text-textred text-thin text-xs pb-1">Free Delivery</p>
-                <p class="text-white bg-textred w-6/12 py-1 text-xs text-center md:w-1/12  ">shop now</p>
+                <p class="text-white bg-textred w-6/12 py-1 text-xs text-center md:w-2/12  ">shop now</p>
             </div>
             <div class=" bg-whitebgs  flex justify-center md:w-1/2">
                 <img src="@/assets/shoe5.png" alt="" class=" w-44 h-40 md:w-2/5 md:h-52  ">

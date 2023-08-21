@@ -1,50 +1,6 @@
 <script setup>
 import navigations from '../components/navigations.vue'
 import footerpage from '../components/footerpage.vue'
-import Popup from '@/components/popup.vue';
-import { onMounted,ref} from 'vue'
-
-let products = ref(null);
-let shoedetails = ref(null);
-
-const popupTriggers = ref({
-  buttonTrigger: false,
-  timedTrigger: false,
-});
-
-const TogglePopup = (trigger, id) => {
-  popupTriggers.value[trigger] = !popupTriggers.value[trigger];
-  details(id);
-   
-};
-
-// api for all products
-async function allproducts(){
-   let response = await fetch('https://fakestoreapi.com/products');
-   let result = await response.json();
-
-   products.value = result.slice(0, 6).map(product => {
-    return{
-        id: product.id,
-        tittle: product.title,
-        image: product.image,
-        price: product.price,
-
-    };
-   })
-  
-
-};
-async function details(id) {
-    let response = await fetch('https://fakestoreapi.com/products/' + id);
-    let result = await response.json();
-
-   shoedetails.value = result;
-}
-
-onMounted(() => {
-    allproducts();
-})
 </script>
 
 <template>
@@ -58,15 +14,10 @@ onMounted(() => {
 
        
         </div>
-        <!-- the slide check -->
-        <div class="flex">
-            <p class="checkbtn">filter</p>
-            <input type="checkbox" id="check" class="check hidden md:hidden">
-        </div>
         <!-- the body -->
         <div class="flex">
             <!-- the side bar -->
-            <div class="  bg-sidenav w-2/6 md:w-1/5 rounded-r-3xl text-white pl-4  space-y-4 pb-4 min-h-max md:min-h-max"  >
+            <div class=" bg-sidenav w-2/6 md:w-1/5 rounded-r-3xl text-white pl-4  space-y-4 pb-4 min-h-screen md:min-h-max"  >
                 <h3 class="text-base font-bold fontfamily-inter  pt-6">Filter</h3>
                 <div class="space-y-2 text-xs md:text-base">
                     <p>Brand</p>
@@ -156,19 +107,16 @@ onMounted(() => {
             </div>
             <div class=" w-4/6 md:w-4/5 ">
                   <!-- recent shoes reviewed -->
-         <div class="grid grid-cols-2  md:grid-cols-3 gap-1 gap-y-10 md:gap-y-20  lg:gap-y-20  text-sm min-h-max md:min-h-max md:text-base" >
-            <div class="px-0  md:px-4"  v-for="(product, id) in products" :key="id">
-                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 h-66 gap-y-3 md:leading-8  md:w-10/12 ">
-                    <div class="w-full h-36 md:h-48">
-                        <img :src="product.image" class="  w-full h-36 mx-auto  md:w-64 md:h-48  " alt="">
-                    </div>
-
-                    <p class=" truncate heighht ">{{ product.tittle }}</p>
-                    <p  class=" ">{{ product.price }}</p>
-                    <button  class="px-2 rounded-2xl py-1 w-8/12  mx-auto bg-redishbtn -mb-4 md:w-8/12 " @click="() => TogglePopup('buttonTrigger', product.id)">View</button>
+         <div class="grid grid-cols-2  md:grid-cols-3 gap-1 gap-y-10 md:gap-y-20  lg:gap-y-20  text-xs min-h-screen md:min-h-max md:text-base ">
+            <div class="px-0  md:px-4">
+                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6  md:leading-8 md:w-full md: w-10/12 ">
+                    <img src="@/assets/firstshoe.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
+                    <p class="text-center ">lorem lorem</p>
+                    <p  class="text-center ">Rs.1050</p>
+                    <button  class="px-2 rounded-2xl py-1 w-8/12  mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
                 </div>
             </div>
-            <!-- <div class="px-0  md:px-4">
+            <div class="px-0  md:px-4">
                 <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
                     <img src="@/assets/shoe2.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
                     <p class="text-center ">lorem lorem</p>
@@ -192,6 +140,14 @@ onMounted(() => {
                     <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12  ">View</button>
                 </div>
             </div>
+            <!-- <div class="px-0 md:px-4 hidden md:grid">
+                <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full  ">
+                    <img src="@/assets/shoe4.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
+                    <p class="text-center ">lorem lorem</p>
+                    <p  class="text-center ">Rs.1050</p>
+                    <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
+                </div>
+            </div> -->
             <div class="px-0 md:px-4">
                 <div class=" flex flex-col  bg-shoesbg w-11/12 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 md:leading-8  md:w-full ">
                     <img src="@/assets/shoe9.png" class="w-32 h-27 mx-auto md:w-48 md:h-32  " alt="">
@@ -231,40 +187,10 @@ onMounted(() => {
                     <p  class="text-center ">Rs.1050</p>
                     <button  class="px-2 rounded-2xl py-1 w-8/12 mx-auto bg-redishbtn -mb-4 md:w-8/12">View</button>
                 </div>
-            </div> -->
-            </div>
             </div>
         </div>
-        <!-- the popup -->
-        <div class="border-2 border-green-900">
-            <Popup v-if="popupTriggers.buttonTrigger" 
-			    :TogglePopup="() => TogglePopup('buttonTrigger')" class="fixed z-99 inset-0 bg-opacity-25 bg-black text-white flex flex-col align-middle  border-4 border-blue-900">
-                <div class=" text-black w-5/6 h-2/5 md:w-4/6  md:h-4/5 mx-auto bg-detailred border-2 border-yellow-900 mt-44 md:mt-28  flex flex-row">
-                    
-                    <div class=" flex flex-row  bg-detailred p-2   text-white fontfamily-inter w-2/5   text-semibold leading-6  md:leading-8">
-                        <img :src="shoedetails.image" class=" m-auto   w-full h-44 mx-auto  md:w-80 md:h-80  " alt="">
 
-                    </div>
-                    
-                    <div class=" flex flex-col text-white fontfamily-inter font-bold  text-sm  items-start  w-3/5 md:w-3/5 overflow-scroll space-y-2 md:overflow-hidden ">
-                        <p class="font-medium text-xs md:text-base fontFamily-inter ">Name: {{ shoedetails.title }} </p>
-                        <p class=" font-medium text-xs md:text-base fontFamily-inter ">Description: {{ shoedetails.description }} </p>
-                        <p  class="text-center  text-xs md:text-base font-medium fontFamily-inter  ">Price: {{ shoedetails.price }}</p>
-                        <div>
-                            <p class=" font-medium text-base fontFamily-inter">size</p>
-                            <p class="bg-detailred border-2 border-black rounded-lg text-center">15</p>
-                        </div>
-                        <div class="flex flex-col w-2/4 mt-5 items-center justify-end self-end  ">
-                            <div class="flex flex-row  h-8 w-14 justify-between   md:w-24  ">
-                                <p class="bg-redishbtn text-white fontfamily-inter font-semibold text-sm w-1/3 text-center self-center">-</p>
-                                <p class="bg-black text-xs w-1/3 text-white text-center self-center">1</p>
-                                <p class="bg-redishbtn text-sm w-1/3 text-center self-center">+</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </Popup>
+            </div>
         </div>
         <div>
              <!-- promo section -->

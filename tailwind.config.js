@@ -10,20 +10,26 @@ module.exports = {
         "darkishash": " #312D32",
         "redishbtn": "#B40D0D",
         "textred":"#FF001B",
+        "detailred":"#C9011B",
         "whitebgs": "#DCF7FB66",
         "shoesbg": "#CA021C",
         "colorings": "#FFFFFF",
+        "sidenav":"#760909",
+        "line":"#F22626"
+       
+        
       },
       keyframes: {
         slide: {
           '0% , 100%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(-200%)' },
         }
       },
      
     },
     animation: {
-      // 'slide': 'slide 5s ease-in-out infinite ',
+      'slide': 'slide 10s ease-in-out infinite ',
       'animation-play-state':'paused',
     },
     fontFamily: {
