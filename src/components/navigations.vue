@@ -38,9 +38,9 @@ function toggle() {
             </div>
             <div class="hidden md:flex space-x-6 lg:space-x-6 lg:pr-4">
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
-            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Men</RouterLink></p>
+            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/men">Men</RouterLink></p>
             <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> <RouterLink to="/womenshoes"> Women</RouterLink></p>
-            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>
+            <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Cart</RouterLink></p>
             <input type="text" class="px-1 text-black outline-none hidden md:inline">
             <svg width="42" height="31" viewBox="0 0 42 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line y1="2.5" x2="42" y2="2.5" stroke="white" stroke-width="5"/>
@@ -61,9 +61,9 @@ function toggle() {
         <div class="md:hidden">
             <div id="menu" class="absolute flex flex-col items-center self-end  py-8 mt-10 space-y-6 font-bold bg-firstred text-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md" :class="{'open':activeClass}">
                 <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/newarrivals">New Arrivals</RouterLink></p>
-                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Men</RouterLink></p>
+                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/men">Men</RouterLink></p>
                 <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/womenshoes"> Women</RouterLink></p>
-                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"> Brands</p>
+                <p class="text-lg hover:text-verydarkred hover:cursor-pointer"><RouterLink to="/mycart">Cart</RouterLink></p>
                 <input type="text" class="px-1 text-black outline-none w-48">
             </div>
         </div>

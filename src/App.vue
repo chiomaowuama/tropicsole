@@ -1,6 +1,15 @@
 <script setup>
+import { onMounted } from 'vue';
 import { RouterLink, RouterView } from 'vue-router'
+import { useStore } from 'vuex';
 // import footer from './components/footer.vue';
+
+const store = useStore();
+
+onMounted(() => {
+  store.dispatch('allproducts')
+  store.dispatch('loadCart')
+})
 
 </script>
 

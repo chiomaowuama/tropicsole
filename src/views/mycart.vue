@@ -1,6 +1,14 @@
 <script setup>
 import navigations from '../components/navigations.vue'
 import footerpage from '../components/footerpage.vue'
+import { computed, onMounted, ref } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore();
+
+let products = computed(() => {
+    return store.getters.getCartProducts;
+});
 </script>
 <template>
     <navigations/>
@@ -19,19 +27,19 @@ import footerpage from '../components/footerpage.vue'
                         <p>Total</p>
                     </div>
                     <!-- the shoe part -->
-                    <div class="flex flex-row bg-verydarkred px-1.5 py-3 md:px-2 ">
+                    <div class="flex flex-row bg-verydarkred px-1.5 py-3 md:px-2 " v-for="product in products" :key="product.id">
                         <div class="flex w-19  md:17 md-h-14 ">
-                            <img src="@/assets/firstshoe.png" class="w-24 h-24 md:w-36 md:h-28 " alt="">
+                            <img :src="product.image" class="w-24 h-24 md:w-36 md:h-28 " alt="">
                         </div>
                         <div class="fontfamily-inter font-normal text-white w-1/4 self-center  leading-normal pl-2  md:w-1/4 md:pl-none ">
-                        <p class=" text-xs  md:text-sm mb-3 md:mb-8 ">Lorem Lorem Lorem Lorem Lorem</p>
+                        <p class=" text-xs  md:text-sm mb-3 md:mb-8 ">{{ product.title }}</p>
                         <p class="text-xs  md:text-sm">Rs:10</p>
-                        <p class="text-xs  md:text-sm">Rs:1050</p>
+                        <p class="text-xs  md:text-sm">Rs: {{ product.price }}</p>
                         </div>
                         <div class="flex w-1/4 items-center   ">
                             <div class="flex flex-row  h-8 w-14 justify-between md:ml-4 md:w-20  ">
                                 <p class="bg-firstred text-white fontfamily-inter font-semibold text-sm w-1/3 text-center self-center">-</p>
-                                <p class="bg-black text-sm w-1/3 text-white text-center self-center">1</p>
+                                <p class="bg-black text-sm w-1/3 text-white text-center self-center">{{ product.quantity }}</p>
                                 <p class="bg-firstred text-sm w-1/3 text-center self-center">+</p>
                             </div>
                         </div>
@@ -41,7 +49,7 @@ import footerpage from '../components/footerpage.vue'
                         
 
                     </div>
-                    <div class="flex flex-row bg-verydarkred px-1.5 py-2 pt-4 md:px-2 border border-white-400 border-l-0 border-r-0 border-b-0">
+                    <!-- <div class="flex flex-row bg-verydarkred px-1.5 py-2 pt-4 md:px-2 border border-white-400 border-l-0 border-r-0 border-b-0">
                         <div class="flex w-19  md:17 md-h-14 ">
                             <img src="@/assets/brownshoe.png" class="w-24 h-24 md:w-36 md:h-28  " alt="">
                         </div>
@@ -62,7 +70,7 @@ import footerpage from '../components/footerpage.vue'
                         </div>
                         
 
-                    </div>
+                    </div> -->
                 </div>
                 <!-- the second div for shoe -->
                 <div class="flex flex-col  basis-2/5 bg-verydarkred">
