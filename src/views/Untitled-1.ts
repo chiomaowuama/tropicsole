@@ -51,3 +51,7 @@
 
 // <button @click="incrementButton(product.id)">+</button>
 // <button @click="decrementButton(product.id)">-</button>
+
+// export default{
+//     props: ['TogglePopup']
+// }

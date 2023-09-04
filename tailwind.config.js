@@ -15,7 +15,8 @@ module.exports = {
         "shoesbg": "#CA021C",
         "colorings": "#FFFFFF",
         "sidenav":"#760909",
-        "line":"#F22626"
+        "line":"#F22626",
+        "orangebtn":"#FF5C01"
        
         
       },
@@ -46,6 +47,6 @@ module.exports = {
     }
     
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 }
 

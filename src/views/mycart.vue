@@ -9,6 +9,31 @@ const store = useStore();
 let products = computed(() => {
     return store.getters.getCartProducts;
 });
+let subtotal = computed(() => {
+    let sum = 0;
+    products.value.forEach(product => {
+        sum += product.quantity * product.price
+    });
+    return sum
+})
+
+function updateProductQuantity(product, isincrement = true){
+    let newquantity =  isincrement ? product.quantity + 1 : product.quantity - 1;
+
+    if (newquantity < 1){
+        store.dispatch('removecart', product.id)
+    }
+    else{
+        store.dispatch('updateCart', {
+            id: product.id,
+            quantity: newquantity   
+        });
+    }
+}
+onMounted(() => {
+    // allproducts();
+    store.dispatch('allproducts', '')
+})
 </script>
 <template>
     <navigations/>
@@ -21,7 +46,7 @@ let products = computed(() => {
         <div class="flex flex-col md:gap-3  md:flex-row ">
                 <!-- the first div for shoe -->
                 <div class=" flex flex-col  basis-3/5 md:flex-col">
-                    <div class="flex flex-row fontfamily-inter font-semibold justify-between w-full border-2 flex border-red-900 bg-productsred text-white px-2 py-1">
+                    <div class="flex flex-row fontfamily-inter font-semibold justify-between w-full border-2  border-red-900 bg-productsred text-white px-2 py-1">
                         <p>Product</p>
                         <p>Quality</p>
                         <p>Total</p>
@@ -38,13 +63,19 @@ let products = computed(() => {
                         </div>
                         <div class="flex w-1/4 items-center   ">
                             <div class="flex flex-row  h-8 w-14 justify-between md:ml-4 md:w-20  ">
-                                <p class="bg-firstred text-white fontfamily-inter font-semibold text-sm w-1/3 text-center self-center">-</p>
+                                <p class="bg-firstred text-white fontfamily-inter font-semibold text-sm w-1/3 text-center self-center" @click="updateProductQuantity(product, false)">-</p>
                                 <p class="bg-black text-sm w-1/3 text-white text-center self-center">{{ product.quantity }}</p>
-                                <p class="bg-firstred text-sm w-1/3 text-center self-center">+</p>
+                                <p class="bg-firstred text-sm w-1/3 text-center self-center" @click="updateProductQuantity(product, true)">+</p>
                             </div>
                         </div>
-                        <div class="flex   w-1/4  justify-end ">
-                            <p class=" flex  w-18 text-sm  h-6 text-white self-end ">Rs.1050</p>
+                        <div class="flex   w-1/4  justify-end  ">
+                            <div class="   flex flex-col  ">``
+                                <p class="text-white text-center border border-white cursor-pointer " @click="store.dispatch('removecart', product.id)">x</p>
+                                <p class=" flex  w-18 text-sm  h-6 text-white self-end mt-auto ">{{ Math.round((product.quantity *  product.price) * 100) / 100 }}</p>
+                            </div>
+                            <!-- <p class="text-white flex justify-end items-end border-2  border-green-800">x</p>
+                            <p class=" flex  w-18 text-sm  h-6 text-white self-end border-2  border-green-800 ">Rs.1050</p> -->
+                            <!-- Rs.1050 -->
                         </div>
                         
 
@@ -77,15 +108,15 @@ let products = computed(() => {
                     <!-- sub totoals -->
                     <div class=" px-2  py-2 pt-3 flex justify-between  text-white fontfamily-inter text-semibold text-xs md:text-sm md:text- md:px-4 ">
                         <p>Sub total</p>
-                        <p>Rs.2100</p>
+                        <p>Rs.{{ Math.round(subtotal * 100) / 100}}</p>
                     </div>
                     <div class="px-2  py-2 pt-3 flex justify-between  text-white fontfamily-inter text-semibold text-xs md:text-sm md:text- md:px-4 ">
                         <p>VAT</p>
-                        <p>Rs.0.000</p>
+                        <p>Rs.{{ Math.round((subtotal * 3/100) * 100) / 100 }}</p>
                     </div>
                     <div class="border border-white-500 border-l-0 border-b-0 border-r-0  px-2  py-2 pt-3 flex justify-between  text-white fontfamily-inter text-semibold text-xs md:text-sm md:text- md:px-4 ">
                         <p>Total</p>
-                        <p>Rs.2100</p>
+                        <p>Rs.{{Math.round((subtotal + (subtotal * 3/100 )) * 100) / 100}}</p>
                     </div>
                     <div class="  px-2  py-2 pt-3 flex justify-between  text-white fontfamily-inter text-semibold text-xs md:text-sm md:text- md:px-4 ">
                         <p>Payment</p>

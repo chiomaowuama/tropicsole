@@ -39,7 +39,8 @@ export default createStore({
                         quantity: item.quantity,
                     };
                 })
-        }
+        },
+      
     },
     mutations: {
         updatteAllProduct(state,products){
@@ -52,11 +53,22 @@ export default createStore({
         updateCart(state, cart){
             state.cart = cart;
             localStorage.setItem('cart', JSON.stringify(cart));
-        }
+        },
+        
+       
     },
     actions: {
-        async allproducts(context) {
-            let response = await fetch('https://fakestoreapi.com/products');
+        async allproducts(context, category = null) {
+            let response = null;
+            if (category == 'men') {
+                response = await fetch("https://fakestoreapi.com/products/category/men's%20clothing");
+            } else if (category == 'women') {
+                response = await fetch("https://fakestoreapi.com/products/category/women's%20clothing");
+            } else if (category == 'jewelery') {
+                response = await fetch("https://fakestoreapi.com/products/category/jewelery");
+            } else {
+                response = await fetch('https://fakestoreapi.com/products');
+            }
             let result = await response.json();
             context.commit('updatteAllProduct', result)
         },
@@ -82,10 +94,15 @@ export default createStore({
                     quantity: quantity
                 });
             } else {
-                cart.filter(item => item.product_id == id)[0].quantity++;
+                cart.filter(item => item.product_id == id)[0].quantity = quantity;
             }
-            
+
             context.commit('updateCart', cart)
+        },
+        removecart(context, id){
+            let newcart =  context.state.cart.filter(item => item.product_id != id)
+            context.commit('updateCart',  newcart)
         }
+      
     }
 })
