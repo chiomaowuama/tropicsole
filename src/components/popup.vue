@@ -4,7 +4,7 @@
         <div class="popup-inner">
             <!-- <slot /> -->
             <div class="fixed z-99 inset-0 bg-opacity-25 bg-black text-white flex flex-col align-middle ">
-                <div class=" w-5/6 h-2/5 md:w-4/6  md:h-3/5 mx-auto bg-detailred  mt-44 md:mt-36  ">
+                <div class=" w-5/6 h-1/5 md:w-4/6  md:h-3/5 mx-auto bg-detailred  mt-44 md:mt-36  ">
                     <button @click="store.commit('singleProduct', null)" class="popup-close bg-shoesbg  w-5/6 md:w-full  justify-end flex pr-2  font-bold self-end mx-auto pt-1 fontfamily-inter  md:pr-10 md:text-xl">X</button>
                     <div class="flex flex-row pb-3 md:pb-7 gap-2 md:gap-0 bg-detailred">
                         <div class=" flex flex-row  bg-detailred py-1 text-white fontfamily-inter w-3/5 h-54 px-2  text-semibold leading-6  md:leading-8">
@@ -27,7 +27,7 @@
 
                             </div>
                             <div class=" w-3/5 flex justify-center bg-orangebtn rounded-lg py-2 text-sm font-bold">
-                                <button  @click="store.dispatch('updateCart', {id: shoedetails.id, quantity: quantity})">Add to cart</button>
+                                <button  @click="cartDisplay(shoedetails.id, quantity)">Add to cart</button>
                             </div>
 
                         </div>
@@ -55,6 +55,12 @@ let quantity = ref(1);
 let shoedetails = computed(() => {
     return store.state.shoedetails;
 });
+
+function cartDisplay(id, quantity){
+    store.dispatch('updateCart', {id: id, quantity: quantity});
+    alert("Added to cart");
+   
+}
 
 // const popupTriggers = ref({
 //   buttonTrigger: false,
