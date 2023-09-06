@@ -53,9 +53,7 @@ export default createStore({
         updateCart(state, cart){
             state.cart = cart;
             localStorage.setItem('cart', JSON.stringify(cart));
-        },
-        
-       
+        },     
     },
     actions: {
         async allproducts(context, category = null) {

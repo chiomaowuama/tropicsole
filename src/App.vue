@@ -20,14 +20,21 @@ onMounted(() => {
 
     <div class="flex flex-col min-h-screen font-inter bg-white text-black">
       <!-- <footer/> -->
-      <RouterView />
       
-     
+      <RouterView/>     
     </div>
   </header>
  
 </template>
 
-<style scoped>
-
+<style  >
+/* route transitions  */
+/* .page-opacity-enter-active,
+.page-opacity-leave-active{
+  transition:600ms ease-in;
+}
+.page-opacity-enter-from
+.page-opacity-leave-to{
+  opacity:0;  
+} */
 </style>

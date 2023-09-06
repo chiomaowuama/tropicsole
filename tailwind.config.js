@@ -25,13 +25,26 @@ module.exports = {
           '0% , 100%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(-200%)' },
-        }
+        },
+        bounce:  {
+          '0%, 100%':  {
+            transform:'translateY(-5%)',
+            timingfunction: 'cubic-bezier(0.8, 0, 1, 1)'
+          },
+          '50%': {
+            transform:'translateY(0)',
+            timingfunction: 'cubic-bezier(0, 0, 0.2, 1)'
+          }
+        },
+    
+        
       },
      
     },
     animation: {
       'slide': 'slide 10s ease-in-out infinite ',
       'animation-play-state':'paused',
+      'bounce': 'bounce 1s infinite',
     },
     fontFamily: {
       inter:["inter"],

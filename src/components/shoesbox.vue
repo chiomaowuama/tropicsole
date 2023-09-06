@@ -20,7 +20,7 @@ let products = computed(() => {
         <div class="px-0  md:px-4"  v-for="(product, id) in products" :key="id">
             <div class=" flex flex-col  w-11/12 py-4 mx-auto rounded-2xl text-white fontfamily-inter text-semibold leading-6 h-66 gap-y-3  bg-shoesbg md:leading-8  md:w-11/12 ">
                 <div class="w-10/12 mx-auto h-36 md:h-60">
-                    <img :src="product.image" class="  w-full h-36 mx-auto  md:w-52 md:h-56 rounded-xl " alt="">
+                    <img :src="product.image" class=" w-full h-36 mx-auto hover:animate-bounce md:w-52 md:h-56 rounded-xl " alt="">
                 </div>
                 <div class="flex flex-col rounded-b-2xl px-2 bg-shoesbg  w-full mx-auto  text-white fontfamily-inter text-semibold leading-6 h-66 gap-y-3 md:leading-4  md:w-11/12">
                     <p class=" truncate heighht ">{{ product.tittle }}</p>

@@ -73,35 +73,11 @@ onMounted(() => {
                                 <p class="text-white text-center border border-white cursor-pointer " @click="store.dispatch('removecart', product.id)">x</p>
                                 <p class=" flex  w-18 text-sm  h-6 text-white self-end mt-auto ">{{ Math.round((product.quantity *  product.price) * 100) / 100 }}</p>
                             </div>
-                            <!-- <p class="text-white flex justify-end items-end border-2  border-green-800">x</p>
-                            <p class=" flex  w-18 text-sm  h-6 text-white self-end border-2  border-green-800 ">Rs.1050</p> -->
-                            <!-- Rs.1050 -->
                         </div>
                         
 
                     </div>
-                    <!-- <div class="flex flex-row bg-verydarkred px-1.5 py-2 pt-4 md:px-2 border border-white-400 border-l-0 border-r-0 border-b-0">
-                        <div class="flex w-19  md:17 md-h-14 ">
-                            <img src="@/assets/brownshoe.png" class="w-24 h-24 md:w-36 md:h-28  " alt="">
-                        </div>
-                        <div class="fontfamily-inter font-normal text-white w-1/4 self-center  leading-normal pl-2  md:w-1/4 md:pl-none ">
-                            <p class=" text-xs  md:text-sm mb-3 md:mb-8">Lorem Lorem Lorem Lorem Lorem</p>
-                            <p class="text-xs  md:text-sm">Rs:10</p>
-                            <p class="text-xs  md:text-sm">Rs:1050</p>
-                        </div>
-                        <div class="flex w-1/4 items-center   ">
-                            <div class="flex flex-row  h-8 w-14 justify-between md:ml-4  md:w-20 ">
-                                <p class="bg-firstred text-white fontfamily-inter font-semibold text-sm w-1/3 text-center self-center">-</p>
-                                <p class="bg-black text-sm w-1/3 text-white text-center self-center">1</p>
-                                <p class="bg-firstred text-sm w-1/3 text-center self-center">+</p>
-                            </div>
-                        </div>
-                        <div class="flex   w-1/4  justify-end ">
-                            <p class=" flex  w-18 text-sm  h-6 text-white self-end ">Rs.1050</p>
-                        </div>
-                        
-
-                    </div> -->
+          
                 </div>
                 <!-- the second div for shoe -->
                 <div class="flex flex-col  basis-2/5 bg-verydarkred">

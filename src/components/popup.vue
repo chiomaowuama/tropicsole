@@ -10,7 +10,7 @@
                         <div class=" flex flex-row  bg-detailred py-1 text-white fontfamily-inter w-3/5 h-54 px-2  text-semibold leading-6  md:leading-8">
                             <img :src="shoedetails.image" class=" m-auto   w-full h-52 mx-auto  md:w-72 md:h-72  " alt="">
                         </div>
-                        <div class=" flex flex-col text-white fontfamily-inter font-bold text-sm items-start w-3/5 space-y-2 overflow-y-auto h-60  md:w-4/5 md:scrollbar-thin md:scrollbar-thumb-black-200 md:h-72 ">
+                        <div class=" flex flex-col text-white fontfamily-inter font-bold text-sm items-start w-3/5 space-y-2 overflow-y-auto h-60 scrollbar-thin scrollbar-thumb-black-200 md:w-4/5 md:scrollbar-thin md:scrollbar-thumb-black-200 md:h-72 ">
                             <p class="font-medium text-xs md:text-base fontFamily-inter ">Name: {{ shoedetails.title }} </p>
                             <p class=" font-medium text-xs md:text-base fontFamily-inter ">Description: {{ shoedetails.description }} </p>
                             <p  class="text-center  text-xs md:text-base font-medium fontFamily-inter  ">Price: {{ shoedetails.price }}</p>
